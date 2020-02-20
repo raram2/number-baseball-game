@@ -1,6 +1,5 @@
 // node_modules에서 리액트 module 불러오기 - import 방식(사실 웹팩환경에서는 부적합)
 import React, {PureComponent, createRef} from 'react';
-// import MemorizedTries from './Tries';
 import Tries from './Tries';
 
 function getDifferentFourNumbs() {
@@ -21,6 +20,7 @@ class NumberBaseball extends PureComponent {
     tries: [],
   };
   textInput = createRef();
+  // NumberBaseball Prototype Methods
   onChangeInput = e => {
     this.setState({guessNumb: e.target.value});
   };
@@ -32,7 +32,7 @@ class NumberBaseball extends PureComponent {
         // 콜백으로 작성시 여기에 다른 동작 작성 가능
         return {
           result: '홈런!',
-          tries: [...this.state.tries, {try: this.state.guessNumb, result: '홈런!'}],
+          tries: [...prevState.tries, {try: prevState.guessNumb, result: '홈런!'}],
         };
       });
       alert('게임을 다시 시작합니다.');

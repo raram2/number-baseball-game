@@ -1,10 +1,11 @@
 {
   "name": "number-baseball-game",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack-dev-server --hot"
+    "build": "webpack",
+    "dev": "webpack-dev-server --hot"
   },
   "author": "Haram Kim",
   "license": "MIT",
