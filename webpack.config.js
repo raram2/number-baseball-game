@@ -1,5 +1,6 @@
 const path = require('path'); // node_modules에 있는 경로 제어 모듈
 const webpack = require('webpack');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 // process.env.NODE_ENV = 'production'; // 배포시 Node.js 환경변수 변경
 
 module.exports = {
@@ -39,10 +40,10 @@ module.exports = {
       },
     ],
   },
-  plugins: [new webpack.LoaderOptionsPlugin({debug: true})],
+  plugins: [new webpack.LoaderOptionsPlugin({debug: true}), new UglifyJSPlugin()],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'dist'), // Asset route for local
     filename: 'app.js',
-    publicPath: '/dist/',
+    publicPath: '/dist/', // Asset route for server
   },
 };

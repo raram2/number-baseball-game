@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "dev": "webpack-dev-server --hot"
+    "build": "webpack --optimize-minimize",
+    "dev": "webpack-dev-server --open --hot"
   },
   "author": "Haram Kim",
   "license": "MIT",
@@ -21,6 +21,7 @@
     "@hot-loader/react-dom": "^16.11.0",
     "babel-loader": "^8.0.6",
     "react-hot-loader": "^4.12.19",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.2"
